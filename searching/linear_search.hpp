@@ -6,8 +6,9 @@
 #define ALGS_LINEAR_SEARCH_HPP
 
 #include <vector>
+#include <iostream>
 
-int linear_search (std::vector<int> vector, int item) {
+size_t linear_search (std::vector<size_t> vector, size_t item) {
     for (int i = 0; i < vector.size() ; ++i) {
         if (vector[i] == item)
             return i;
