@@ -4,20 +4,24 @@
 
 #include <iostream>
 #include <vector>
-#include <linear_search.hpp>
-#include <binary_search.hpp>
+#include <insertion_sort.hpp>
+#include <ctime>
+
+
 
 int main () {
+    unsigned int start_time =  clock();
 
-    std::vector<size_t> vector;
+    std::vector<size_t> vector = {1,1000,2,3,999,4,25,56,931,123,56,3,7,999,356,35667,1234,2345,11,55,22,67,24,76,88, 99};
 
-    for (int i = 0; i<2000000; ++i)
-        vector.push_back(i+1);
+    insertion_sort(vector);
 
-    size_t i = linear_search(vector,1999999);
+    for (unsigned long i : vector)
+        std::cout << i << " ";
 
-    std::cout << i; // output: 99
+    unsigned int end_time =  clock();
+    unsigned int search_time = end_time - start_time;
 
-
+    std::cout << std::endl << search_time;
     return 0;
 }

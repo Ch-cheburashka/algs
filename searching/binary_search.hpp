@@ -6,8 +6,10 @@
 #define ALGS_BINARY_SEARCH_HPP
 
 #include <vector>
+#include <iostream>
 
-size_t binary_search(std::vector<size_t> arr, size_t item) {
+template <typename T>
+T binary_search(std::vector<T> arr, size_t item) {
     size_t start = 0;
     size_t end = arr.size() - 1;
 
@@ -17,7 +19,8 @@ size_t binary_search(std::vector<size_t> arr, size_t item) {
         if (item == arr[middle]) {
             return middle;
         }
-        else if (item < arr[middle])
+
+        if (item < arr[middle])
             end = middle - 1;
         else
             start = middle + 1;

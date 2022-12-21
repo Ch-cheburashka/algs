@@ -11,6 +11,10 @@ target_include_directories(ALGS INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/searching>
         $<INSTALL_INTERFACE:searching>
         )
+target_include_directories(ALGS INTERFACE
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/sorting>
+        $<INSTALL_INTERFACE:sorting>
+        )
 
 add_executable(main cli/main.cpp)
 

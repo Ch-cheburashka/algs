@@ -8,7 +8,8 @@
 #include <vector>
 #include <iostream>
 
-size_t linear_search (std::vector<size_t> vector, size_t item) {
+template<typename T>
+T linear_search (std::vector<T> vector, size_t item) {
     for (int i = 0; i < vector.size() ; ++i) {
         if (vector[i] == item)
             return i;
