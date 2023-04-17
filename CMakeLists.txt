@@ -8,10 +8,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_library(ALGS INTERFACE)
 
 target_include_directories(ALGS INTERFACE
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/searching>
-        $<INSTALL_INTERFACE:searching>
-        )
-target_include_directories(ALGS INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/sorting>
         $<INSTALL_INTERFACE:sorting>
         )
