@@ -1,11 +1,8 @@
-//
-// Created by baran on 17.04.2023.
-//
-
 #ifndef ALGS_SORTING_ALGORITHMS_HPP
 #define ALGS_SORTING_ALGORITHMS_HPP
 #include <vector>
 #include <memory>
+#include <algorithm>
 
 template <typename T>
 class i_sorting_algorithms {
@@ -67,7 +64,6 @@ class comb_sort : public i_sorting_algorithms<T> {
         if (vector.empty()) { return; }
         const double factor = 1.247;
         double step = vector.size() - 1;
-
         while (step >= 1) {
             for (int i = 0; i + step < vector.size(); ++i) {
                 if (vector[i] > vector[i + step]) {
@@ -75,6 +71,31 @@ class comb_sort : public i_sorting_algorithms<T> {
                 }
             }
             step /= factor;
+        }
+    }
+};
+
+template <typename T>
+class insertion_sort : public i_sorting_algorithms<T> {
+    void sort (std::vector<T>& vector) {
+        if (vector.empty())
+            return;
+        for (size_t i = 1; i < vector.size(); ++i) {
+            T temp = vector[i];
+            size_t j = i;
+            for (;j > 0 && vector[j - 1] > temp;--j)
+                vector[j] = vector[j - 1];
+            vector[j] = temp;
+        }
+    }
+};
+
+template <typename T>
+class selection_sort : public i_sorting_algorithms<T> {
+    void sort(std::vector<T>& vector) {
+        for (auto i = vector.begin(); i != vector.end(); ++i) {
+            auto min = std::min_element(i,vector.end());
+            std::swap(*i,*min);
         }
     }
 };

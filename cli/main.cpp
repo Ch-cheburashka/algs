@@ -8,11 +8,11 @@
 
 int main () {
 
-    std::vector<int> vector = {1,3,2,5,3,6,1};
+    std::vector<int> vector = {5,6,3,1,8,7,2};
 
     sorting_algorithm<int> algorithm;
 
-    algorithm.set_sorting_alg(std::make_unique<comb_sort<int>>());
+    algorithm.set_sorting_alg(std::make_unique<selection_sort<int>>());
 
     algorithm.sort(vector);
 
